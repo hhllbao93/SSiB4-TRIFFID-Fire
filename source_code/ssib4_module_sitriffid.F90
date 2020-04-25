@@ -3,7 +3,7 @@
 !   The main change are: 
 !        1) Dimension change; 
 !        2) Inclusion of the trifparms.h file.  01/03/2008
-!        3) TS1,STHU,V_SAT and V_WILT are input for each type. 05/12//2008
+!        3) TS1,STHU,V_SAT and V_WILT are input for each type. 05/12/2008
 !        4) re-constructed from F77 to F90 by zzq 09/24/2013
 !================================================================================    
 !#define DEBUG_PRINT
