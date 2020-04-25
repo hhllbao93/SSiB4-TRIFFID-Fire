@@ -8,4 +8,4 @@ The Fortran code related to the fire model includes:
 (2) ssib4_module_fireimp.F90: The code to calculate carbon loss due to biomass combustion and post-fire mortality
 (3) ssib4_module_fireparms.F90: The parameter table for fire model
 (4) ssib4_module_sitriffid.F90: To update fire impact in vegetation dynamics in TRIFFID
-(5) ssib4_module_sfctrif.F90: Interface for fire model and SSiB4
+(5) ssib4_module_sfctrif.F90: Interface for fire model, TRIFFID, and SSiB4
