@@ -1,0 +1,88 @@
+#!/bin/sh
+# 
+MPWD=`pwd`
+#---------------------------------------------------------------- 
+# SSiB4/TRIFFID settings. 
+#---------------------------------------------------------------- 
+# regions settings
+#---------------------------------------------------------------- 
+#
+LONS=@tilons@
+LONE=@tilone@
+LATS=@tilats@
+LATE=@tilate@
+EXPNUM=1
+#EXECDIR=../../@ti@_outp/@tioutp@
+EXECDIR=@tioutp@
+mkdir -p $EXECDIR
+#---------------------------------------------------------------- 
+# output modes
+#   1 - for GrADS .ctl and binary files
+#   2 - for netcdf files
+#---------------------------------------------------------------- 
+#
+DATMODE=2
+#
+#---------------------------------------------------------------- 
+# system command statement
+#---------------------------------------------------------------- 
+#
+mkdir -p runscr
+#LIB="-L/glade/u/apps/opt/netcdf/4.2/intel/12.1.4/lib -lnetcdff -lnetcdf"
+LIB="-L/glade/u/apps/ch/opt/netcdf/4.4.1.1/intel/17.0.1/lib -lnetcdff -lnetcdf"
+#FINCS="-I/glade/u/apps/opt/netcdf/4.2/intel/12.1.4/include"
+FINCS="-I/glade/u/apps/ch/opt/netcdf/4.4.1.1/intel/17.0.1/include"
+EXEC=$MPWD/runscr/ssib4_$EXPNUM.exe
+CPP_FLAGS="-C -nostdinc"
+FORT_FLAGS=
+LOAD_FLAGS=
+FC=ifort
+CP=cp
+RM=rm
+CD=cd
+CPP=/usr/bin/cpp
+#
+cat <<EOF >fort.1
+&nctl
+expnum='$EXPNUM',
+outdir='$EXECDIR'/
+EOF
+
+#---------------------------------------------------------------- 
+#
+#  Creating sed a script
+#
+#---------------------------------------------------------------- 
+seddat=$MPWD/runscr/seddat_srcs
+cat <<EOF >$seddat
+	s%@MPWD@%$MPWD%g
+	s%@EXEC@%$EXEC%g
+	s%@DATMODE@%$DATMODE%g
+	s%@LONS@%$LONS%g
+	s%@LONE@%$LONE%g
+	s%@LATS@%$LATS%g
+	s%@LATE@%$LATE%g
+	s%@TASK@%$TASK%g
+	s%@FC@%$FC%g
+	s%@CP@%$CP%g
+	s%@RM@%$RM%g
+	s%@CD@%$CD%g
+	s%@CPP@%$CPP%g
+	s%@LIB@%$LIB%g
+	s%@FINCS@%$FINCS%g
+	s%@CPP_FLAGS@%$CPP_FLAGS%g
+	s%@FORT_FLAGS@%$FORT_FLAGS%g
+	s%@LOAD_FLAGS@%$LOAD_FLAGS%g
+	s%@AR_FLAGS@%$AR_FLAGS%g
+EOF
+#
+#
+#  Configure
+#
+
+echo "creating module_comsdef.F90"
+sed -f $seddat ./ssib4_src/module_comsdef.F90.IN>./ssib4_src/module_comsdef.F90
+sed -f $seddat ./ssib4_src/Makefile.IN>./ssib4_src/Makefile
+#
+make
+#
