@@ -110,7 +110,7 @@ CONTAINS
 !-----------------------------------------------------------------------
     ! Get model step size
 
-    ei                          = 100.*exp(21.18123-5418./tm)/.622    !Huilin add ei for vapor pressure at saturation
+    ei                          = 100.*exp(21.18123-5418./tm)/.622    !Add ei for vapor pressure at saturation
     lh                          = 0.01*6.8*dp**(0.4)/30.0/24.0
     light                       = light/1000000.0
     light                       = light/(5.16+2.16*cos(3*min(60.0,abs(zlat))/90.0*PIE))*0.22

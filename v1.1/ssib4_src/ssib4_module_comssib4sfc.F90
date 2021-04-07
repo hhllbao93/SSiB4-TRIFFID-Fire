@@ -86,7 +86,7 @@ TYPE ssibdataout
     real:: QPREC, QPEATF, QPREC60_AVG, QBAF_AVG60
     real:: QLH,QIGN,QFM_AVG,QFT_AVG,QFB_AVG,QFM_FIRE,QAGR
     real:: QFSAT, QFCLI, QBAF_PEAT                
-    real:: QBAF_AVG, QNFIRE_AVG, QBURN_AVG, QBURN_PEAT   !Huilin add QBURN_AVG Mar. 2019
+    real:: QBAF_AVG, QNFIRE_AVG, QBURN_AVG, QBURN_PEAT  !Huilin add QBURN_AVG Mar. 2019
     real,dimension(NTYPES):: QBURN_FIRE                 !Huilin add QBURN_FIRE Mar. 2019
     real:: QEM_CO2,QEM_CO,QEM_CH4,QEM_NHMC,QEM_H2,QEM_NOX,QEM_N2O
     real:: QEM_PM25,QEM_TPM,QEM_TC,QEM_OC,QEM_BC 

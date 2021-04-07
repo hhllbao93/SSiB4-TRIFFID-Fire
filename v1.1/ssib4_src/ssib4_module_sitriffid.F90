@@ -1602,15 +1602,7 @@ contains
 ! Fire disturbence Ye && Huilin Mar.28 
 !----------------------------------------------------------------------    
        DO N = 1, NPFT
-           IF (N.eq.1 .or. N.eq.7) THEN 
-               IF (FRAC(N).le.0.10) THEN
-                   DFRAC_FIRE(N) = (LEAF_LOSS(N) + ROOT_LOSS(N) + WOOD_LOSS(N)) /(1.0-AGR) / C_VEG(N)*FRAC(N)/3.0
-               ELSE 
-                   DFRAC_FIRE(N) = (LEAF_LOSS(N) + ROOT_LOSS(N) + WOOD_LOSS(N)) /(1.0-AGR) / C_VEG(N)*FRAC(N)
-               ENDIF
-           ELSE  
-               DFRAC_FIRE(N) = (LEAF_LOSS(N) + ROOT_LOSS(N) + WOOD_LOSS(N)) /(1.0-AGR) / C_VEG(N)*FRAC(N)
-           END IF
+           DFRAC_FIRE(N) = (LEAF_LOSS(N) + ROOT_LOSS(N) + WOOD_LOSS(N)) /(1.0-AGR) / C_VEG(N)*FRAC(N)
            DFRAC_FIRE(N) = min(DFRAC_FIRE(N), FRAC(N) - FRAC_MIN)
            FRAC(N)       = FRAC(N) - DFRAC_FIRE(N)
        ENDDO

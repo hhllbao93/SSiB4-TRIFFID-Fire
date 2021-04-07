@@ -117,7 +117,7 @@
 ! irestart = 0 for starting the model.
 ! irestart = 1 for starting the model and read ssib.inp.
 ! irestart = 2 for restart
-      irestart  = 0        !Huilin revise to 2
+      irestart  = 0        
 !
       call ssibin(ssibios,irestart,outdir,dtt, &
             iyear,imonth,iday,tdayhr,itime,thour)   

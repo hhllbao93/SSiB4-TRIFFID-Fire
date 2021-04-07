@@ -6,7 +6,6 @@ MODULE ssib4_module_fireparms
 ! Functional Type dependent parameters                                  
 !-----------------------------------------------------------------------
       REAL,DIMENSION(NPFT)::     &                                                           
-       UMAX,                     &! Average miximum fire spread rate in natural vegetation region
        FLAM,                     &! Plant flammability threshold  
        CC_leaf,                  &! Combustion Completeness for leave
        CC_wood,                  &! Combustion Completeness for wood 
