@@ -1,7 +1,0 @@
-MODULE module_comsdef 
-! module template 
-   integer, parameter:: LONF2S= @LONS@
-   integer, parameter:: LONF2E= @LONE@
-   integer, parameter:: LATG2S= @LATS@
-   integer, parameter:: LATG2E= @LATE@
-END MODULE
