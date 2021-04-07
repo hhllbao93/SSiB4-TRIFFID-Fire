@@ -13,8 +13,8 @@ The Fortran code related to the fire model includes:
 Version 1.0: the fire modeling on global scale. It has ben used in the submission of the manuscript, "Modeling long-term fire impact on ecosystem characteristics and surface energy using the dynamic global vegetation model SSiB4/TRIFFID-Fire" (Huang et al. 2020)
 
 Version 1.1: the fire model application in Southern Africa. Updates in the model includes: 
-1) A constant agricultural fraction has been replaced by the annual-updated agricuture data. As they have a different crop fraction and spatial distribution in tropical regions, we have recalibrated the parameters for fire spread, fuel combustibility, and carbon combustion to reproduce the observed magnitude and temporal variations of burned area and carbon emission in satellite data.
-2) The seasonality of vegetation productivity (GPP) is underestimated in Huang et al. (2020) as the model overestimated GPP in the dry season. We have adjusted paramters in the calculation of root-zone soil moisture potential factor f(θ) to reflect the effects of soil water deficit on transpiration. 
+1) A constant agricultural fraction has been replaced by an annual-updated agricuture data. As they have a different crop fraction and spatial distribution in tropical regions, we have recalibrated the parameters for fire spread, fuel combustibility, and carbon combustion to reproduce the observed fire regimes.
+2) The seasonality of GPP is underestimated in Huang et al. (2020) as the it is overestimated in the dry season. We have adjusted paramters in the calculation of root-zone soil moisture potential factor f(θ) to reflect the effects of soil water deficit on transpiration. 
 More details can be referred to Huang et al. (2021) 
 
 Ref: 
